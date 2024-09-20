@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>sixtysxx</title>
+</head>
+<!-- got confuzled on fieldset-->
+<h2>
+    <form action="#" method="POST">
+        <fieldset> <legend> Personal Info</legend>
+        <label for="name">Name:</label><br>
+        <input for="name" id="name" name="name" required><br><br>
+        <input type="date" name="DOB" required>
+        </fieldset>
+        <fieldset> <legend> Contact Info</legend>
+        <label for="email">Email:</label><br>
+        <input for="email" id="email" name="email" placeholder="example@domain.com" required><br><br>
+
+        <label for="Phone">Phone:</label><br>
+        <input for="Phone" id="Phone" name="Phone" placeholder="720-720-7200" required><br><br>
+        </fieldset>
+        <fieldset> <legend> Inquiring Message</legend>
+        <label for="MSG">Message:</label><br>
+        <input for="MSG" id="MSG" rows="5" cols="50" required><br><br>
+        </fieldset>
+        <label><input type="radio" name="gender" value="male"> Male </label><br>
+        <label><input type="radio" name="gender" value="female"> Female </label><br>
+        <label><input type="radio" name="gender" value="AH64"> AH-64 Attack Helicopter </label><br>
+        <label><input type="radio" name="gender" value="other">Other </label><br><br>
+        <button type="submit">Submit to epic database that def doesnt steal ur data /j</button>
+        <select id="country" name="country">
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="overthere">Over there</option>
+        </select><br><br>
+        <label for="password">Set a Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="reset">Reset</button>
+    </form>
+</h2>
