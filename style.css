@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-    color: #50C878
+    color: #0c0c0c
 }
 
 h2 {
@@ -19,7 +19,7 @@ a {
 }
 
 img {
-    border: 5px solid #50C878;
+    border: 5px solid #0c0c0c;
 }
 
 table {
@@ -139,13 +139,13 @@ text area {
 
 input[type="text"]:focus,
 textarea:focus {
-    border-color: #4Caf50;
+    border-color: #f3f4f6;
     outline: none;
     background-color: #f9f9f9;
 }
 
 button {
-    background-color: #4Caf50;
+    background-color: #0c0b09;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -155,7 +155,8 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #333333 ;
+    transition: ease-in-out all .8s;
 }
 
 form {
@@ -184,4 +185,12 @@ input::placeholder,
 textarea::placeholder {
     color: #aaaaaa;
     font-style: italic;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+button.delete {
+    margin-left: 12px;
+    font-size: small;
 }

@@ -1,139 +1,131 @@
 <!DOCTYPE html>
-<html>
+<nav>
+    <h2>Table of contents</h2>
+    <ul>
+        <li> <a href="#to-do">TO-DO</a></li>
+        <li> <a href="form.html">survey thing</a></li>
+    </ul>
+</nav>
+<link href="style.css" rel="stylesheet">
+<title>Six</title>
+<h1>Hihi</h1>
+<h2>My name is Six, aka Anvil</h2>
+<p>I like boxing, coding, and everything tech-wise</p>
 
-<head>
-    <link rel="stylesheet" href="style.css">
-    <title> six </title>
-</head>
-<h1> hihi</h1>
-<h2>
-    im six, aka anvil, aka andrew
-</h2>
-<p> i like boxing n coding n everything tech-wise
-</p>
-
+<section id="to-do">
+  <h1>Todo List</h1>
+  <input id="taskInput" placeholder="Eat the microwave">
+  <button id="AddTaskButton">Add Task</button>
+  <ul id="taskList"></ul>
+</section>
 
 <img src="https://i.pinimg.com/736x/3a/c3/28/3ac328dc8a40a9258e705bcf5d227476.jpg">
-<br /> <a href="https://hacker.one" style="color: rgb(73, 73, 144);">epic website</a>
+<a href="https://hacker.one" style="color: #494990">Epic Website</a>
+
 <ul>
-    <li>
-        bananers
-    </li>
-    <li>
-        watermelers
-    </li>
-    <li>
-        chocolate covered strawbs
-    </li>
-    <li>
-        mango (not the language)
-    </li>
-    <li>
-        maraschino cherry
-    </li>
+  <li>Bananers</li>
+  <li>Watermelers</li>
+  <li>Chocolate covered strawberries</li>
+  <li>Mango</li>
+  <li>Maraschino cherry</li>
 </ul>
+
 <ol>
-    <li>
-        need for speed
-    </li>
-    <li>
-        plants vs zombers
-    </li>
-    <li>
-        mc
-    </li>
-    <li>
-        fortnite
-    </li>
-    <li>
-        rocket league
-    </li>
+  <li>Need for Speed</li>
+  <li>Plants vs Zombies</li>
+  <li>MC</li>
+  <li>Fortnite</li>
+  <li>Rocket League</li>
 </ol>
+
 <ul>
-    <li> hobbies
-        <ul>
-            <li>boxing </li>
-            <li>eatin </li>
-            <li>coding </li>
-        </ul>
-    </li>
+  <li>Hobbies</li>
+  <li>
     <ul>
-        <li> hobbies 2.0
-            <ul>
-                <li>riding ebike on trials </li>
-                <li>sleep </li>
-                <li>trading </li>
-            </ul>
-        </li>
+      <li>Boxing</li>
+      <li>Eating</li>
+      <li>Coding</li>
     </ul>
+  </li>
+  <li>Hobbies 2.0</li>
+  <li>
+    <ul>
+      <li>Riding e-bike on trials</li>
+      <li>Sleeping</li>
+      <li>Trading</li>
+    </ul>
+  </li>
 </ul>
 
 <table border="2.5">
+  <tr>
+    <th>Day</th>
+    <th>Class</th>
+    <th>Time</th>
+  </tr>
+  <tr>
+    <td>Monday</td>
+    <td>English</td>
+    <td>3:30-4:20</td>
+  </tr>
+  <tr>
+    <td>Tuesday</td>
+    <td>ASL</td>
+    <td>1:30-2:20</td>
+  </tr>
+  <tr>
+    <td>Wednesday</td>
+    <td>English</td>
+    <td>3:30-4:20</td>
+  </tr>
+  <tr>
+    <td>Thursday</td>
+    <td>ASL</td>
+    <td>1:30-2:20</td>
+  </tr>
+  <tr>
+    <td>Friday</td>
+    <td>Web Dev</td>
+    <td>2:30-3:20</td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <a href="https://hacker.one">Bio</a>
+    </td>
+  </tr>
+  <tfoot>
     <tr>
-        <th>
-            day
-        </th>
-        <th>
-            class
-        </th>
-        <th>
-            time
-        </th>
+      <td colspan="4">Total subjects: IDK</td>
     </tr>
-    <tr>
-        <td>
-            monday
-        </td>
-        <td>
-            engerish &#x1F4DA
-            <!-- why dont i work, idk-->
-        </td>
-        <td>
-            3:30-4:20
-        </td>
-    </tr>
-    <tr>
-        <td>
-            tues
-        </td>
-        <td>ASL</td>
-        <td>1:30-2:20</td>
-    </tr>
-    <tr>
-        <td>
-            wednesday
-        </td>
-        <td>
-            engerish
-        </td>
-        <td>
-            3:30-4:20
-    </tr>
-    <tr>
-        <td>thurs</td>
-        <td>ASL</td>
-        <td>1:30-2:20</td>
-    </tr>
-    <tr>
-        <td>
-            friyay
-        </td>
-        <td title="normally in tech lab, else check classroom">web dev</td>
-        <td>
-            2:30-3:20
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <a href="https://e-z.bio/sixtysxx">bio</a>
-        </td>
-    </tr>
-    <tfoot>
-        <tr>
-            <td colspan="4">total subjects: idk</td>
-        </tr>
-    </tfoot>
+  </tfoot>
 </table>
-</body>
 
-</html>
+<script>
+  const taskInput = document.getElementById("taskInput");
+  const addTaskButton = document.getElementById("AddTaskButton");
+  const taskList = document.getElementById("taskList");
+
+  addTaskButton.addEventListener("click", function () {
+    const newTask = taskInput.value.trim();
+    if (newTask) {
+      const li = document.createElement("li");
+      li.textContent = newTask;
+      li.addEventListener("click", function () {
+        this.classList.toggle("completed");
+      });
+      addDeleteButton(li);
+      taskList.appendChild(li);
+      taskInput.value = "";
+    }
+  });
+
+  function addDeleteButton(item) {
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete");
+    deleteButton.textContent = "Skadoosh";
+    deleteButton.addEventListener("click", function () {
+      item.remove();
+    });
+    item.appendChild(deleteButton);
+  }
+</script>
