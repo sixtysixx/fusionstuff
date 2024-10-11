@@ -4,6 +4,7 @@
     <ul>
         <li> <a href="#to-do">TO-DO</a></li>
         <li> <a href="form.html">survey thing</a></li>
+        <li> <a href="#classes">schedule</a></li>
     </ul>
 </nav>
 <link href="style.css" rel="stylesheet">
@@ -22,7 +23,7 @@
 <img src="https://i.pinimg.com/736x/3a/c3/28/3ac328dc8a40a9258e705bcf5d227476.jpg">
 <a href="https://hacker.one" style="color: #494990">Epic Website</a>
 
-<ul>
+<ul id="favfruits">
   <li>Bananers</li>
   <li>Watermelers</li>
   <li>Chocolate covered strawberries</li>
@@ -30,7 +31,7 @@
   <li>Maraschino cherry</li>
 </ul>
 
-<ol>
+<ol id="favgames">
   <li>Need for Speed</li>
   <li>Plants vs Zombies</li>
   <li>MC</li>
@@ -38,7 +39,7 @@
   <li>Rocket League</li>
 </ol>
 
-<ul>
+<ul id="hobbies">
   <li>Hobbies</li>
   <li>
     <ul>
@@ -57,7 +58,7 @@
   </li>
 </ul>
 
-<table border="2.5">
+<table border="2.5" id="classes">
   <tr>
     <th>Day</th>
     <th>Class</th>
@@ -90,7 +91,7 @@
   </tr>
   <tr>
     <td colspan="3">
-      <a href="https://hacker.one">Bio</a>
+      <a href="https://e-z.bio/sixtysxx">Bio</a>
     </td>
   </tr>
   <tfoot>
@@ -116,6 +117,9 @@
       addDeleteButton(li);
       taskList.appendChild(li);
       taskInput.value = "";
+      //const taskListJson = JSON.stringify(taskList);
+      //const newTodoItemJson = JSON.stringify([...taskList, newTodoItem]);
+      //localStorage.setItem('taskList', newTodoItemJson);
     }
   });
 
@@ -128,4 +132,27 @@
     });
     item.appendChild(deleteButton);
   }
-</script>
+
+    // function saveList() {
+    //   const items = Array.from(document.querySelectorAll('li')).map(li => ({
+    //     text: li.textContent,
+    //     done: li.classList.contains('completed') // istg if this dont work
+    //   }));
+    //   localStorage.setItem('taskList', JSON.stringify(items));
+    // }
+
+    // function loadList() {
+    //   const savedItems = JSON.parse(localStorage.getItem('taskList'));
+    //   if (savedItems) {
+    //     savedItems.forEach(item => {
+    //       const li = document.createElement('li');
+    //       li.textContent = item.text;
+    //       if (item.done) { li.classList.add('completed');
+    //       }
+    //       docuemnt.querySelector('ul'.appendChild(li)';'
+    //       )
+    //       )
+    //     });
+    //   }
+    // }
+  </script>
