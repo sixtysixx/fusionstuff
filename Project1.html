@@ -2,9 +2,9 @@
 <nav>
     <h2>Table of contents</h2>
     <ul>
-        <li> <a href="#to-do">TO-DO</a></li>
         <li> <a href="form.html">survey thing</a></li>
         <li> <a href="#classes">schedule</a></li>
+        <li> <a href="to-do.html">to-do</a></li>
     </ul>
 </nav>
 <link href="style.css" rel="stylesheet">
@@ -12,13 +12,6 @@
 <h1>Hihi</h1>
 <h2>My name is Six, aka Anvil</h2>
 <p>I like boxing, coding, and everything tech-wise</p>
-
-<section id="to-do">
-  <h1>Todo List</h1>
-  <input id="taskInput" placeholder="Eat the microwave">
-  <button id="AddTaskButton">Add Task</button>
-  <ul id="taskList"></ul>
-</section>
 
 <img src="https://i.pinimg.com/736x/3a/c3/28/3ac328dc8a40a9258e705bcf5d227476.jpg">
 <a href="https://hacker.one" style="color: #494990">Epic Website</a>
@@ -100,59 +93,3 @@
     </tr>
   </tfoot>
 </table>
-
-<script>
-  const taskInput = document.getElementById("taskInput");
-  const addTaskButton = document.getElementById("AddTaskButton");
-  const taskList = document.getElementById("taskList");
-
-  addTaskButton.addEventListener("click", function () {
-    const newTask = taskInput.value.trim();
-    if (newTask) {
-      const li = document.createElement("li");
-      li.textContent = newTask;
-      li.addEventListener("click", function () {
-        this.classList.toggle("completed");
-      });
-      addDeleteButton(li);
-      taskList.appendChild(li);
-      taskInput.value = "";
-      //const taskListJson = JSON.stringify(taskList);
-      //const newTodoItemJson = JSON.stringify([...taskList, newTodoItem]);
-      //localStorage.setItem('taskList', newTodoItemJson);
-    }
-  });
-
-  function addDeleteButton(item) {
-    const deleteButton = document.createElement("button");
-    deleteButton.classList.add("delete");
-    deleteButton.textContent = "Skadoosh";
-    deleteButton.addEventListener("click", function () {
-      item.remove();
-    });
-    item.appendChild(deleteButton);
-  }
-
-    // function saveList() {
-    //   const items = Array.from(document.querySelectorAll('li')).map(li => ({
-    //     text: li.textContent,
-    //     done: li.classList.contains('completed') // istg if this dont work
-    //   }));
-    //   localStorage.setItem('taskList', JSON.stringify(items));
-    // }
-
-    // function loadList() {
-    //   const savedItems = JSON.parse(localStorage.getItem('taskList'));
-    //   if (savedItems) {
-    //     savedItems.forEach(item => {
-    //       const li = document.createElement('li');
-    //       li.textContent = item.text;
-    //       if (item.done) { li.classList.add('completed');
-    //       }
-    //       docuemnt.querySelector('ul'.appendChild(li)';'
-    //       )
-    //       )
-    //     });
-    //   }
-    // }
-  </script>
