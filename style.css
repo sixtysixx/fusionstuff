@@ -194,3 +194,24 @@ button.delete {
     margin-left: 12px;
     font-size: small;
 }
+
+* {
+    text-align: justify;
+}
+nav {
+    position: sticky;
+    top: 16px;
+    right: 32px;
+    /* fix the thingy so it goes into right corner not left */
+  }
+
+#cat {
+    position: sticky;
+    width: 10%;
+    height: auto;
+    top: 8px;
+}
+.container {
+    position: relative;
+    width: 100%; 
+}
