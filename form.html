@@ -17,7 +17,7 @@
     <title>sixtysxx</title>
 </head>
 <h2>
-    <form action="#" method="POST">
+    <form action="#" method="POST" id="FormThatStealsYourData">
         <fieldset> <legend> Personal Info</legend>
         <label for="name">Name:</label><br>
         <input for="name" id="name" name="name" required><br><br>
@@ -38,7 +38,6 @@
         <label><input type="radio" name="gender" value="female"> Female </label><br>
         <label><input type="radio" name="gender" value="AH64"> AH-64 Attack Helicopter </label><br>
         <label><input type="radio" name="gender" value="other">Other </label><br><br>
-        <button type="submit">Submit to epic database that def doesnt steal ur data</button>
         <select id="country" name="country">
             <option value="usa">United States</option>
             <option value="canada">Canada</option>
@@ -47,8 +46,36 @@
         </select><br><br>
         <label for="password">Set a Password:</label><br>
         <input type="password" id="password" name="password" required><br><br>
-
-        <button type="reset">Reset</button>
+        <button type="reset">Reset all</button>
+        <button id="submitionbutton" type="submit">Submit to epic database that def doesnt steal ur data</button>
     </form>
 </h2>    
 </body>
+
+<script>
+    document.getElementById("FormThatStealsYourData").addEventListener("submit", function(event)) {
+        event.preventDefault();; // stop form for validations
+    }
+
+    let errorMessages = [];
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+
+    if (name.length < 2) {
+        errorMessages.push("NUH UH, Please enter a name with at least 2 characters");
+    }
+
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneMessage.test(phone)) {
+        errorMessages.push("Phone number must be 10 digits")
+    }
+
+    const errorContainer = docment.getElementById("errorMessages");
+    if (errorMessages.length > 0) {
+        errorContainer.innerHtml = errorMessages.join("<br>")
+    } else {
+        errorContainer.innerHtml = "";
+        alert("Your data is mine mwuahahahahhaha")
+    }
+</script>
