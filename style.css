@@ -198,7 +198,8 @@ button.delete {
 * {
     text-align: justify;
 }
-nav {
+#ToC {
+    float: right;
     position: sticky;
     top: 16px;
     right: 32px;
@@ -210,8 +211,4 @@ nav {
     width: 10%;
     height: auto;
     top: 8px;
-}
-.container {
-    position: relative;
-    width: 100%; 
 }
