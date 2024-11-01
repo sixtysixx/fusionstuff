@@ -78,6 +78,13 @@
         return
     }
 
+    
+    const EmailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (!EmailRegex.test(email)) {
+        alert("Email Isnt formatted corrected")
+        return
+    }
+
     const errorContainer = document.getElementById("errorMessages");
     if (errorMessages.length > 0) {
         errorContainer.innerHtml = errorMessages.join("<br>")
