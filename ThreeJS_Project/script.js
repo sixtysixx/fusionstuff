@@ -101,8 +101,8 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "d") sphere.position.x += 0.25;
   if (event.key === "w") sphere.position.y -= 0.25;
   if (event.key === "s") sphere.position.y += 0.25;
-  if (event.key === "e") sphere.scale.set(2, 2, 2)
-  if (event.key === "q") sphere.scale.set(-2, -2, -2)
+//  if (event.key === "e") sphere.scale.set(2, 2, 2)
+//  if (event.key === "q") sphere.scale.set(-2, -2, -2)
 })
 
 window.addEventListener('resize', () => {
