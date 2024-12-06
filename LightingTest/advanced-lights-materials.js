@@ -1,0 +1,74 @@
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.15, 1000)
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight); // Set the size of the renderer to the window dimensions
+renderer.shadowMap.enabled = true; // Enable shadow maps for realistic shadows in the scene
+document.body.appendChild(renderer.domElement); // Append the renderer's DOM element (canvas) to the body
+
+const sphereGeometry = new THREE.sphereGeometry(.5, 32, 32)
+// 0.5: radius, 32: width segments, 32: height segments for a smoother appearance
+
+// Create a Phong material for the sphere, which allows for shiny surfaces
+const phongMaterial = new THREE.MeshPhongMaterial({ color: 0xff0000, shininess: 100 });
+// color: red, shininess: 100 (higher values produce a more reflective surface)
+const sphere = new THREE.Mesh(sphereGeometry, phongMaterial); // Combine geometry and material into a mesh
+sphere.position.set(-1.5, 0, 0); // Position the sphere to the left of the center
+sphere.castShadow = true; // Allow the sphere to cast shadows
+scene.add(sphere); // Add the sphere to the scene
+
+// Create a cube geometry with dimensions of 1 unit in all directions
+const cubeGeometry = new THREE.BoxGeometry(1, 1, 1); 
+// 1: width, height, and depth (uniform size)
+
+// Create a Lambert material for the cube, which gives it a matte finish
+const lambertMaterial = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
+// color: green (no shininess as Lambert material is non-reflective)
+const cube = new THREE.Mesh(cubeGeometry, lambertMaterial); // Combine geometry and material into a mesh
+cube.position.set(1.5, 0, 0); // Position the cube to the right of the center
+cube.castShadow = true; // Allow the cube to cast shadows
+scene.add(cube); // Add the cube to the scene
+
+// Add a PointLight to the scene
+const pointLight = new THREE.PointLight(0xffffff, 1, 100); 
+// color: white, intensity: 1 (brightness), distance: 100 (light will fade beyond this distance)
+pointLight.position.set(0, 5, 0); // Position the point light above the objects
+pointLight.castShadow = true; // Allow the point light to cast shadows
+scene.add(pointLight); // Add the point light to the scene
+
+// Add a SpotLight to the scene
+const spotLight = new THREE.SpotLight(0xffffff, 1); 
+// color: white, intensity: 1 (brightness)
+spotLight.position.set(0, 5, 5); // Position the spotlight above and in front of the objects
+spotLight.angle = Math.PI / 8; // Set the angle of the spotlight's light cone (22.5 degrees)
+spotLight.penumbra = 0.2; // Soft edges of the light cone for smoother transitions (0 to 1)
+spotLight.castShadow = true; // Allow the spotlight to cast shadows
+scene.add(spotLight); // Add the spotlight to the scene
+
+// Create an ambient light to provide a base level of illumination
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); 
+// color: white, intensity: 0.5 (soft light that affects all objects equally)
+scene.add(ambientLight); // Add the ambient light to the scene
+
+// Function to animate the scene
+function animate() {
+    requestAnimationFrame(animate); // Request the next frame for animation
+
+    // Rotate the objects for visual effect
+    sphere.rotation.y += 0.01; // Rotate the sphere around the y-axis (0.01 radians per frame)
+    cube.rotation.y -= 0.01; // Rotate the cube around the y-axis (0.01 radians per frame)
+
+    // Render the scene from the perspective of the camera
+    renderer.render(scene, camera);
+}
+
+// Start the animation loop
+animate();
+
+// Adjust the camera and renderer when the window is resized
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight; // Update the camera aspect ratio based on new window dimensions
+    camera.updateProjectionMatrix(); // Update the projection matrix to account for the new aspect ratio
+    renderer.setSize(window.innerWidth, window.innerHeight); // Update the renderer size to match the new window dimensions
+});
