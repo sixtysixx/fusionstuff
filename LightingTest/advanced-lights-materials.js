@@ -34,10 +34,12 @@ scene.add(sphere2); // Add the sphere to the scene
 // Create a cube geometry with dimensions of 1 unit in all directions
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1); 
 const cubeGeometry2 = new THREE.BoxGeometry(1, 1, 1); 
+const cubeGeometry3 = new THREE.BoxGeometry(1, 1, 1); 
+const cubeGeometry4 = new THREE.BoxGeometry(1, 1, 1); 
 // 1: width, height, and depth (uniform size)
 
 // Create a Lambert material for the cube, which gives it a matte finish
-const lambertMaterial = new THREE.MeshLambertMaterial({ color: 0xFFD700 });
+const lambertMaterial = new THREE.MeshLambertMaterial({ color: 0x50C878 });
 // color: green (no shininess as Lambert material is non-reflective)
 const cube = new THREE.Mesh(cubeGeometry, lambertMaterial); // Combine geometry and material into a mesh
 cube.position.set(1.5, 0, 0); // Position the cube to the right of the center
@@ -45,12 +47,28 @@ cube.castShadow = true; // Allow the cube to cast shadows
 scene.add(cube); // Add the cube to the scene
 
 // Create a Lambert material for the cube, which gives it a matte finish
-const lambertMaterial2 = new THREE.MeshLambertMaterial({ color: 0xFFD700 });
+const lambertMaterial2 = new THREE.MeshLambertMaterial({ color: 0x50C878 });
 // color: green (no shininess as Lambert material is non-reflective)
 const cube2 = new THREE.Mesh(cubeGeometry2, lambertMaterial2); // Combine geometry and material into a mesh
 cube2.position.set(1.5, 0, 0); // Position the cube to the right of the center
 cube2.castShadow = true; // Allow the cube to cast shadows
 scene.add(cube2); // Add the cube to the scene
+
+// Create a Lambert material for the cube, which gives it a matte finish
+const lambertMaterial3 = new THREE.MeshLambertMaterial({ color: 0x50C878 });
+// color: green (no shininess as Lambert material is non-reflective)
+const cube3 = new THREE.Mesh(cubeGeometry3, lambertMaterial2); // Combine geometry and material into a mesh
+cube3.position.set(1.5, 0, 0); // Position the cube to the right of the center
+cube3.castShadow = true; // Allow the cube to cast shadows
+scene.add(cube3); // Add the cube to the scene
+
+// Create a Lambert material for the cube, which gives it a matte finish
+const lambertMaterial4 = new THREE.MeshLambertMaterial({ color: 0x50C878 });
+// color: green (no shininess as Lambert material is non-reflective)
+const cube4 = new THREE.Mesh(cubeGeometry4, lambertMaterial4); // Combine geometry and material into a mesh
+cube4.position.set(1.5, 0, 0); // Position the cube to the right of the center
+cube4.castShadow = true; // Allow the cube to cast shadows
+scene.add(cube4); // Add the cube to the scene
 
 // Add a PointLight to the scene
 const pointLight = new THREE.PointLight(0xffffff, 2, 100); 
@@ -78,11 +96,15 @@ function animate() {
     requestAnimationFrame(animate); // Request the next frame for animation
 
     // Rotate the objects for visual effect
-    sphere.rotation.y += 0.01; // Rotate the sphere around the y-axis (0.01 radians per frame)
-    cube.rotation.y += 0.01; // Rotate the cube around the y-axis (0.01 radians per frame)
-    cube.rotation.x -= 0.01; // Rotate the cube around the y-axis (0.01 radians per frame)
-    cube2.rotation.y -= 0.01; // Rotate the cube around the y-axis (0.01 radians per frame)
-    cube2.rotation.x += 0.01; // Rotate the cube around the y-axis (0.01 radians per frame)
+    sphere.rotation.y += 0.015; // Rotate the sphere around the y-axis (0.015 radians per frame)
+    cube.rotation.y += 0.015; // Rotate the cube around the y-axis (0.015 radians per frame)
+    cube.rotation.x -= 0.015; // Rotate the cube around the y-axis (0.015 radians per frame)
+    cube2.rotation.y -= 0.015; // Rotate the cube around the y-axis (0.015 radians per frame)
+    cube2.rotation.x += 0.015; // Rotate the cube around the y-axis (0.015 radians per frame)
+    cube3.rotation.y -= 0.015; // Rotate the cube around the y-axis (0.015 radians per frame)
+    cube3.rotation.x -= 0.015; // Rotate the cube around the y-axis (0.015 radians per frame)
+    cube4.rotation.y += 0.015; // Rotate the cube around the y-axis (0.015 radians per frame)
+    cube4.rotation.x += 0.015; // Rotate the cube around the y-axis (0.015 radians per frame)
 
     // Render the scene from the perspective of the camera
     renderer.render(scene, camera);
@@ -97,3 +119,4 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix(); // Update the projection matrix to account for the new aspect ratio
     renderer.setSize(window.innerWidth, window.innerHeight); // Update the renderer size to match the new window dimensions
 });
+
