@@ -7,7 +7,7 @@ renderer.setSize(window.innerWidth, window.innerHeight); // Set the size of the 
 renderer.shadowMap.enabled = true; // Enable shadow maps for realistic shadows in the scene
 document.body.appendChild(renderer.domElement); // Append the renderer's DOM element (canvas) to the body
 
-const sphereGeometry = new THREE.sphereGeometry(.5, 32, 32)
+const sphereGeometry = new THREE.SphereGeometry(.5, 32, 32)
 // 0.5: radius, 32: width segments, 32: height segments for a smoother appearance
 
 // Create a Phong material for the sphere, which allows for shiny surfaces
