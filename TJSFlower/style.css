@@ -1,10 +1,20 @@
 body {
     margin: 0;
+<<<<<<< HEAD
     overflow: hidden; /* skadoosh scrollbar */
+=======
+    overflow: hidden;
+        /* skadoosh scrollbar */
+>>>>>>> 258aa48d11be37da3b05230b8eb6bafa5b1a7d86
     background-color: #0c0c0c;
 }
 
 canvas {
+<<<<<<< HEAD
     display: block; /* 
+=======
+    display: block;
+        /* 
+>>>>>>> 258aa48d11be37da3b05230b8eb6bafa5b1a7d86
      remove inline space*/
 }

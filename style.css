@@ -95,7 +95,8 @@ ol {
     padding-left: 16px;
 }
 
-ul,ol {
+ul,
+ol {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 18px;
     line-height: 1.60;
@@ -155,7 +156,7 @@ button {
 }
 
 button:hover {
-    background-color: #333333 ;
+    background-color: #333333;
     transition: ease-in-out all .8s;
 }
 
@@ -190,6 +191,7 @@ textarea::placeholder {
 .completed {
     text-decoration: line-through;
 }
+
 button.delete {
     margin-left: 12px;
     font-size: small;
@@ -198,13 +200,14 @@ button.delete {
 * {
     text-align: justify;
 }
+
 #ToC {
     float: right;
     position: sticky;
     top: 16px;
     right: 32px;
     /* fix the thingy so it goes into right corner not left */
-  }
+}
 
 #cat {
     position: sticky;
